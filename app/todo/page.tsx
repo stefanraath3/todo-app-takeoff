@@ -17,9 +17,9 @@ export default async function TodoPage() {
     return redirect("/signup");
   }
 
-  //   if (profile.membership === "free") {
-  //     return redirect("/pricing");
-  //   }
+  if (profile.membership === "free") {
+    return redirect("/pricing");
+  }
 
   const todos = await getTodos(userId);
 
