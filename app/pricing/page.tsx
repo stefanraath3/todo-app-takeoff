@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { auth } from "@clerk/nextjs/server";
 import { CheckCircle, XCircle } from "lucide-react";
+import Link from "next/link";
 
 export default async function PricingPage() {
   const { userId } = auth();
@@ -92,7 +93,7 @@ function PricingCard({
 }: PricingCardProps) {
   const finalButtonLink = userId
     ? `${buttonLink}?client_reference_id=${userId}`
-    : buttonLink;
+    : "/signup";
 
   return (
     <div
@@ -124,14 +125,7 @@ function PricingCard({
           className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
           asChild
         >
-          <a
-            href={finalButtonLink}
-            className={
-              finalButtonLink === "#" ? "pointer-events-none opacity-50" : ""
-            }
-          >
-            {cta}
-          </a>
+          <Link href={finalButtonLink}>{userId ? cta : "Join Now"}</Link>
         </Button>
       </div>
     </div>
