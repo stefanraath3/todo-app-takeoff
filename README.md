@@ -37,18 +37,22 @@ This project is a full-stack todo application built using Cursor. It's the resul
 
 Create a `.env.local` file in the root directory and add the following variables:
 
+```
 DB (Supabase)
 DATABASE_URL=
+
 Auth (Clerk)
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/signup
+
 Payments (Stripe)
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PAYMENT_LINK_YEARLY=
 NEXT_PUBLIC_STRIPE_PAYMENT_LINK_MONTHLY=
+```
 
 ## Learn More
 
